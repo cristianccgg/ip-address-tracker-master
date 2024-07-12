@@ -1,34 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | IP Address Tracker</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link href="/src/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | IP Address Tracker</title>
+  </head>
+  <body>
+    <main class="font-rubik max-w-screen-4xl min-h-screen">
+      
+        <div class="grid grid-rows-3 w-auto sm:w-full  min-h-screen">
+          <div
+            class="row-span-1 bg-small-pattern bg-no-repeat sm:bg-large-pattern items-center gap-5 relative h-auto w-auto  bg-cover"
+          >
+          
+            <div
+              class="absolute z-10 top-10 left-1/2 transform -translate-x-1/2 flex flex-col px-5 items-center  gap-5 sm:w-full sm:mt-10 sm:gap-5"
+            > <div>
+              <h1 class="text-white text-xl sm:text-4xl">IP Address Tracker</h1>
+            </div>
+              <form id="form" class="w-80 sm:w-96 flex" action="">
+                <label for="input"></label>
+                <input
+                  class="w-full h-10 rounded-l-lg p-2"
+                  id="input"
+                  type="text"
+                  placeholder="Search for any IP address"
+                />
+                <button class="bg-black p-3 rounded-r-lg"><img src="/images/icon-arrow.svg" alt=""></button></input>
+              </form>
+              <div id="results"
+                class="z-20 bg-white text-black w-80  flex flex-col items-center p-5 rounded-lg sm:h-28 sm:flex-row gap-3 sm:w-[50rem] lg:w-[70rem]  sm:justify-between"
+              >
+                <div class="flex flex-col items-center sm:items-start">
+                  <h2 class="text-xs">IP Address</h2>
+                  <h2 class="text-center font-semibold">192.212.174.101</h2>
+                </div>
+                <div class="flex flex-col items-center sm:items-start">
+                  <h2 class="text-xs">Location</h2>
+                  <h2 class="text-center font-semibold">California, US</h2>
+                </div>
+                 <div class="flex flex-col items-center sm:items-start">
+                  <h2 class="text-xs">Timezone</h2>
+                  <h2 class="text-center font-semibold">UTC-07:00</h2>
+                </div>
+                 <div class="flex flex-col items-center sm:items-start">
+                  <h2 class="text-xs">ISP</h2>
+                  <h2 class="text-center font-semibold">SpaceX Starlink<h2>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+          <div id="map" class="row-span-2 z-0 h-full"></div>
+        </div>
+        
+      
+    </main>
 
-  IP Address Tracker
-
-  Search for any IP address or domain
-
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+  <script src="/main.js"></script>
 </html>
