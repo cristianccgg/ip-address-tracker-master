@@ -1,6 +1,5 @@
 const resultsDiv = document.getElementById("results");
 const ipInput = document.getElementById("input");
-const apiKey = "at_ppenhHg2j1EkGVhRZzMFHhA19urE0";
 const form = document.getElementById("form");
 
 form.addEventListener("submit", (e) => {
@@ -58,7 +57,17 @@ async function fetchData(ipAddress = "") {
 
 function updateIp() {
   const ipAddress = ipInput.value;
-  fetchData(ipAddress);
+  if (isValidIP(ipAddress)) {
+    fetchData(ipAddress);
+  } else {
+    console.error("Invalid IP address");
+  }
+}
+
+function isValidIP(ip) {
+  const ipRegex =
+    /^(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)$/;
+  return ipRegex.test(ip);
 }
 
 fetchData();
